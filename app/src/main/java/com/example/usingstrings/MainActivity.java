@@ -1,8 +1,10 @@
 package com.example.usingstrings;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Lifecycle;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,5 +18,43 @@ public class MainActivity extends AppCompatActivity {
 
         textView2 = findViewById(R.id.textView2);
         textView2.setText(R.string.Msg2);
+
+
+        Log.i("Lifecycle", "OnCreate() invoked");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        Log.i("Lifecycle", "OnStart() invoked");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.i("Lifecycle", "OnResume() invoked");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        Log.i("Lifecycle", "OnPause() invoked");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        Log.i("Lifecycle", "OnStop() invoked");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        Log.i("Lifecycle", "OnDestroy() invoked");
     }
 }
